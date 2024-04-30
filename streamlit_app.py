@@ -11,6 +11,7 @@ apps = [
     {"func": heatmap.app, "title": "PARNAIBA", "icon": "map"},
     {"func": home.app , "title": "PIRACURUCA", "icon": "map"},
     {"func": upload.app, "title": "PIRIPIRI", "icon": "map"},
+    {"func": campina.app, "title": "PIRIPIRI", "icon": "map"},
 ]
 
 titles = [app["title"] for app in apps]
