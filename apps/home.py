@@ -7,6 +7,6 @@ def app():
 
     
 
-    m = leafmap.Map(locate_control=True,location=[-3.50,-41.45], zoom_start=10, tiles="OpenStreetMap")
+    m = leafmap.Map(locate_control=True,location=[-3.00,-41.0], zoom_start=10, tiles="OpenStreetMap")
     m.add_basemap("ROADMAP")
     m.to_streamlit(height=800)
