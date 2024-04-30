@@ -7,7 +7,7 @@ def app():
 
     
 
-    m = leafmap.Map(locate_control=True,location=[-3.935,-41.710], zoom_start=14, tiles="OpenStreetMap")
+    m = leafmap.Map(locate_control=True,location=[-3.9336,-41.7085], zoom_start=12, tiles="OpenStreetMap")
 
     #bairros = giseo.GeoDataFrame("https://geojson.io/api/geojson/5e8f131f7a73104a9c3e8f12/geojson")
 
