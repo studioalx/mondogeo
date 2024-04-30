@@ -1,12 +1,12 @@
-import pydeck as pdk
-import geopandas as gpd
-
-world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
-
-centroids = gpd.GeoDataFrame()
-centroids["geometry"] = world.geometry.centroid
-centroids["name"] = world.name
+import streamlit as st
+import leafmap.foliumap as leafmap
 
 
+def app():
+    st.title("MAPA PIRACURUCA - VERSÃO DE TESTE")
 
-pdk.Deck(layers, map_provider=None).to_html("geopandas_integration.html", css_background_color="cornflowerblue")
+    
+
+    m = leafmap.Map(locate_control=True,location=[-3.935,-41.710], zoom_start=14, tiles="OpenStreetMap")
+    m.add_basemap("ROADMAP")
+    m.to_streamlit(height=800)
