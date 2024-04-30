@@ -3,7 +3,7 @@ import leafmap.foliumap as leafmap
 
 
 def app():
-    st.title("Home")
+    st.title("MAPA PIAUI")
 
     st.markdown(
         """
@@ -16,4 +16,4 @@ def app():
 
     m = leafmap.Map(locate_control=True)
     m.add_basemap("ROADMAP")
-    m.to_streamlit(height=700)
+    m.to_streamlit(height=800)
