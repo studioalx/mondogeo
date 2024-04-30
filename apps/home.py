@@ -3,10 +3,10 @@ import leafmap.foliumap as leafmap
 
 
 def app():
-    st.title("MAPA PIAUI - VERSÃO DE TESTE")
+    st.title("MAPA PIRACURUCA - VERSÃO DE TESTE")
 
     
 
-    m = leafmap.Map(locate_control=True,location=[-3.40,-41.422959762553785], zoom_start=10, tiles="OpenStreetMap")
+    m = leafmap.Map(locate_control=True,location=[-3.50,-41.45], zoom_start=10, tiles="OpenStreetMap")
     m.add_basemap("ROADMAP")
     m.to_streamlit(height=800)
