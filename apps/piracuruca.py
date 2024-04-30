@@ -1,16 +1,26 @@
-import streamlit as st
-import leafmap.foliumap as leafmap
+import pydeck as pdk
+import geopandas as gpd
 
+world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
 
-def app():
-    st.title("MAPA PIRACURUCA - VERSÃO DE TESTE")
+centroids = gpd.GeoDataFrame()
+centroids["geometry"] = world.geometry.centroid
+centroids["name"] = world.name
 
-    
+layers = [
+    pdk.Layer(
+        "GeoJsonLayer",
+        data=world,
+        get_fill_color=[0, 0, 0],
+    ),
+    pdk.Layer(
+        "TextLayer",
+        data=centroids,
+        get_position="geometry.coordinates",
+        get_size=16,
+        get_color=[255, 255, 255],
+        get_text="name",
+    ),
+]
 
-    m = leafmap.Map(locate_control=True,location=[-3.9336,-41.7085], zoom_start=12, tiles="OpenStreetMap")
-
-    #bairros = giseo.GeoDataFrame("https://geojson.io/api/geojson/5e8f131f7a73104a9c3e8f12/geojson")
-
-
-    m.add_basemap("ROADMAP")
-    m.to_streamlit(height=800)
+pdk.Deck(layers, map_provider=None).to_html("geopandas_integration.html", css_background_color="cornflowerblue")
