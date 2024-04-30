@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-from apps import home, heatmap, upload, campina  # import your app modules here
+from apps import home, heatmap, upload, campina, piracuruca  # import your app modules here
 
 st.set_page_config(page_title="STUDIO GEO-MONDO", layout="wide")
 
@@ -12,6 +12,7 @@ apps = [
     {"func": home.app , "title": "PIRACURUCA", "icon": "map"},
     {"func": upload.app, "title": "PIRIPIRI", "icon": "map"},
     {"func": campina.app, "title": "CAMPINA", "icon": "map"},
+    {"func": piracuruca.app, "title": "CAMPINA", "icon": "map"},
 ]
 
 titles = [app["title"] for app in apps]
